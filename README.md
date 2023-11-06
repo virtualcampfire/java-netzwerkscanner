@@ -17,3 +17,15 @@ Ziele:
 -	Schnelles und Effizientes bespielen 
 -	Integrierung an a und c
 
+### 3.	Projektstruktur
+### 4.	GUI-Design
+### 5.	Event Handling
+### 6.	SSH-Kommunikation
+### 7.	IP- und MAC-Adressen abrufen
+### 8.	Datenbank 
+### 9.	Fehlerbehandlung
+### 10.	Benutzerfreundlichkeit
+### 11.	Sicherheit
+### 12.	Testen
+
+
