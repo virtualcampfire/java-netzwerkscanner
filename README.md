@@ -17,7 +17,10 @@ Ziele:
 -	Schnelles und Effizientes bespielen 
 -	Integrierung an a und c
 
-### 3.	Projektstruktur
+### 3.	EPK
+
+![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/epk.png)
+
 ### 4.	GUI-Design
 ### 5.	Event Handling
 ### 6.	SSH-Kommunikation
