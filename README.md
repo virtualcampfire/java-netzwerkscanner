@@ -21,14 +21,28 @@ Ziele:
 
 ![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/epk.png)
 
-### 4.	GUI-Design
-### 5.	Event Handling
-### 6.	SSH-Kommunikation
-### 7.	IP- und MAC-Adressen abrufen
-### 8.	Datenbank 
-### 9.	Fehlerbehandlung
-### 10.	Benutzerfreundlichkeit
-### 11.	Sicherheit
-### 12.	Testen
+### Verwendete Technologien und Packete: 
+
+- Programmiersprache: Java
+- Genutze Packete:
+    - javax.swing.*; // Hier kurze Erklärung 
+    - java.awt.*; // Hier kurze Erklärung 
+    - java.awt.event.ActionEvent; // Hier kurze Erklärung 
+    - java.awt.event.ActionListener; // Hier kurze Erklärung 
+    - java.net.InetAddress; // Hier kurze Erklärung 
+    - java.net.InetSocketAddress; // Hier kurze Erklärung 
+    - java.net.Socket; // Hier kurze Erklärung 
+    - java.util.concurrent.ExecutorSe // Hier kurze Erklärung 
+    - java.util.concurrent.Executors; // Hier kurze Erklärung 
+
+### .	GUI-Design
+### .	Event Handling
+### .	SSH-Kommunikation
+### .	IP- und MAC-Adressen abrufen
+### .	Datenbank 
+### .	Fehlerbehandlung
+### .	Benutzerfreundlichkeit
+### .	Sicherheit
+### .	Testen
 
 
