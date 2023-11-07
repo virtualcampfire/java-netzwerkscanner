@@ -33,7 +33,11 @@ Ziele:
     - java.net.InetSocketAddress; // Hier kurze Erklärung 
     - java.net.Socket; // Hier kurze Erklärung 
     - java.util.concurrent.ExecutorSe // Hier kurze Erklärung 
-    - java.util.concurrent.Executors; // Hier kurze Erklärung 
+    - java.util.concurrent.Executors; // Hier kurze Erklärung
+
+### 4.	UML
+
+![UML](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/UML.png)
 
 ### .	GUI-Design
 ### .	Event Handling
