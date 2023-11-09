@@ -19,7 +19,7 @@ Ziele:
 
 ### 3.	EPK
 
-![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/epk.png)
+![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/epk.png)
 
 ### Verwendete Technologien und Packete: 
 
@@ -37,7 +37,7 @@ Ziele:
 
 ### 4.	UML
 
-![UML](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/UML.png)
+![UML](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/UML.png)
 
 ### .	GUI-Design
 ### .	Event Handling
