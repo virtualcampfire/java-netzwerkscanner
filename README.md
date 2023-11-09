@@ -42,6 +42,8 @@ Unsere gesamte Projektabwicklung erfolgt transparent und effizient über GitHub.
 
 #### Komponenten:
 
+![Tabelle](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/tabelle.png)
+
 Projekte:
 - Die Hauptprojekte sind auf GitHub strukturiert und beinhalten alle relevanten Informationen, Ressourcen und den Quellcode.
   
@@ -50,6 +52,8 @@ Dokumentation:
   
 Roadmap (Zeitmanagement):
 - Eine klare Roadmap definiert die zeitliche Strukturierung und Meilensteine für die Entwicklung. Diese ermöglicht eine übersichtliche Planung und Verfolgung des Fortschritts.
+
+![Roadmap](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/roadmap.png)
   
 Codierung und Versionierung:
 - GitHub dient als Plattform für die sichere Verwaltung des Codes und die transparente Versionierung.
@@ -59,6 +63,8 @@ Agile Softwareentwicklung:
   
 Sprint-basierte Planung:
 - Für jede Entwicklungsiteration wird ein separates Projekt angelegt, gekennzeichnet durch die Kalenderwoche und das Jahr. Hier finden sich die spezifische Roadmap sowie ein Board zur Visualisierung der Arbeitsprozesse.
+
+![Sprint](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/Sprint.png)
   
 #### Board-Struktur:
 - Jedes Board gliedert sich in vier Spalten:
@@ -74,6 +80,8 @@ In Progress:
   
 Done:
 - Abgeschlossene Aufgaben werden in dieser Spalte übersichtlich dokumentiert.
+
+![Board](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/board.png)
   
 Diese Organisationsstruktur ermöglicht uns eine transparente, kollaborative und erfolgreiche Projektdurchführung.
 
