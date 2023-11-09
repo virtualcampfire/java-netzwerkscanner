@@ -1,21 +1,40 @@
 # Java-Netzwerkscanner
 
 ### 1.  Projektbeschreibung 
-Unsere Firma entwickelt Signage-Geräte, bestehend aus einem Bildschirm und einem Mini-PC. Die Signage-Software muss vor der Auslieferung auf dem Mini-PC installiert werden. Der Initialeinstellungsprozess erfolgt über einen Arduino Leonardo, gefolgt von der Integration in unser Netzwerk, bei dem IP- und MAC-Adressen abgerufen und gespeichert werden. Bei speziellen Kundenanforderungen müssen zusätzliche SSH-Konfigurationen auf den Geräten vorgenommen werden. Anschließend müssen die IP-Adressen der Geräte manuell in AWX eingegeben werden, das dann einen Job startet, um unsere Signage-App zu installieren.
+#### Worum geht es? 
 
-Aktuelle Situation: 
-- (a) BIOS muss eingestellt werden (Automatisch) 
-- (b) Abfragen und Speichern der IP/MAC-Adressen und Änderungen über SSH vornehmen. (manuell) 
-- (c) Signage App wird bespielt (Automatisch) 
+Die KOKE GmbH ist auf die Entwicklung von Digital Signage spezialisiert und beliefert erfolgreich große Ketten. Jedes Signage-Gerät durchläuft einen individuellen Bespielungsprozess, der die Konfiguration von BIOS, Linux und AWX umfasst. Dieser Vorgang beansprucht etwa 15 Minuten pro Gerät. Angesichts einer bedeutenden Bestellung von über 4000 Signage-Geräten stellt sich die Frage: Wer hat die Lust und Zeit, mehr als 1000 Stunden damit zu verbringen, jedes einzelne Gerät manuell zu bespielen? Hier liegt die Herausforderung, eine effiziente und zeitsparende Lösung zu finden, um diesen umfangreichen Auftrag erfolgreich abzuwickeln.
 
-### 2.	Projektziele
-In der aktuellen Situation, wie in der Projektbeschreibung dargestellt, soll der gesamte Prozess automatisiert werden. Hierbei ist das Ziel, eine nahtlose Integration der verschiedenen Prozesse zu ermöglichen.
+#### Was ist die aktuelle Situation? 
 
-Ziele: 
--	Abfrage der Geräte IPs und MAC-Adressen
--	Quick-Tasks (Wiederholende SSH Befehle automatisch abrufen)
--	Schnelles und Effizientes bespielen 
--	Integrierung an a und c
+In der aktuellen Situation steht jedes Signage-Gerät vor einer manuellen Bespielung, bestehend aus drei Hauptkomponenten: dem Bildschirm, dem Rechner und der Software. Die Softwareanpassungen umfassen mehrere Schritte. Zunächst erfolgt die automatische Einstellung des BIOS über den Arduino Leonardo. Im Anschluss müssen jedoch die IP- und MAC-Adressen manuell abgefragt, gespeichert und SSH-Änderungen vorgenommen werden. Schließlich erfolgt die automatische Bespielung der Signage-App über AWX. Diese Prozesse erfordern derzeit ein hohes Maß an manuellem Aufwand und Zeitinvestition für jedes einzelne Gerät.
+
+#### Wie können wir bestehende Systeme verbessern? 
+
+Automatisierte IP/MAC-Adressen-Abfrage und SSH-Änderungen:
+
+Netzwerkscan:
+- Das System sollte das Netzwerk automatisch scannen, um alle verfügbaren Geräte zu identifizieren.
+
+Portsuche:
+- Nach dem Netzwerkscan sucht das System nach bestimmten offenen Ports, um die Geräte präzise zu identifizieren.
+  
+Geräteidentifikation und Kopieren:
+- Nach der Identifikation eines Geräts werden die IP- und MAC-Adressen automatisch abgerufen und können auf Wunsch kopiert werden.
+  
+Quick-Tasks über SSH:
+- Das System sollte die Möglichkeit bieten, Quick-Tasks über SSH auszuführen. Dadurch können automatisierte Änderungen oder Konfigurationen auf den Geräten durchgeführt werden.
+  
+Start für AWX:
+- Nach Abschluss der vorherigen Schritte gibt das System den Startschuss für AWX, um die automatische Installation der Signage-App zu initiieren.
+
+#### Grundsätzliche Schlüsselstellen sind: 
+- Identifikation der eigenen IP-Adresse 
+- Scannen des gesamten restlichen Netzwerkes (255.255.255.0)
+- Check der offenen Ports der erkannten Geräte
+- Ausführen der Quick-Tasks über SSH
+- Datenbankmigration
+- Übersichtliche UI (JFrame)
 
 ### 3.	EPK
 
