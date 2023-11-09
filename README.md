@@ -36,6 +36,48 @@ Start für AWX:
 - Datenbankmigration
 - Übersichtliche UI (JFrame)
 
+
+### Projekte Organisation auf GitHub
+Unsere gesamte Projektabwicklung erfolgt transparent und effizient über GitHub. Dies umfasst nicht nur die eigentliche Codierung und Versionierung, sondern auch die Planung, Dokumentation und zeitliche Organisation.
+
+#### Komponenten:
+
+Projekte:
+- Die Hauptprojekte sind auf GitHub strukturiert und beinhalten alle relevanten Informationen, Ressourcen und den Quellcode.
+  
+Dokumentation:
+- Alle wichtigen Informationen werden in der Dokumentation zentralisiert und gepflegt.
+  
+Roadmap (Zeitmanagement):
+- Eine klare Roadmap definiert die zeitliche Strukturierung und Meilensteine für die Entwicklung. Diese ermöglicht eine übersichtliche Planung und Verfolgung des Fortschritts.
+  
+Codierung und Versionierung:
+- GitHub dient als Plattform für die sichere Verwaltung des Codes und die transparente Versionierung.
+  
+Agile Softwareentwicklung:
+- Wir setzen auf agile Softwareentwicklung, um flexibel auf Anforderungsänderungen reagieren zu können und auf kontinuierlichem Feedback basierend zu entwickeln.
+  
+Sprint-basierte Planung:
+- Für jede Entwicklungsiteration wird ein separates Projekt angelegt, gekennzeichnet durch die Kalenderwoche und das Jahr. Hier finden sich die spezifische Roadmap sowie ein Board zur Visualisierung der Arbeitsprozesse.
+  
+#### Board-Struktur:
+- Jedes Board gliedert sich in vier Spalten:
+  
+Sprint Backlog (User Story, Top-Task):
+- Hier werden die definierten User Stories und Top-Tasks für den jeweiligen Sprint festgehalten.
+  
+Todo:
+- Aufgaben, die noch erledigt werden müssen, werden in dieser Spalte priorisiert und geplant.
+  
+In Progress:
+- Hier befinden sich die Aufgaben, die sich aktuell in Bearbeitung befinden.
+  
+Done:
+- Abgeschlossene Aufgaben werden in dieser Spalte übersichtlich dokumentiert.
+  
+Diese Organisationsstruktur ermöglicht uns eine transparente, kollaborative und erfolgreiche Projektdurchführung.
+
+
 ### 3.	EPK
 
 ![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/epk.png)
