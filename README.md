@@ -3,7 +3,7 @@
 ### 1.  Projektbeschreibung 
 #### Worum geht es? 
 
-Die KOKE GmbH ist auf die Entwicklung von Digital Signage spezialisiert und beliefert erfolgreich große Ketten. Jedes Signage-Gerät durchläuft einen individuellen Bespielungsprozess, der die Konfiguration von BIOS, Linux und AWX umfasst. Dieser Vorgang beansprucht etwa 15 Minuten pro Gerät. Angesichts einer bedeutenden Bestellung von über 4000 Signage-Geräten stellt sich die Frage: Wer hat die Lust und Zeit, mehr als 1000 Stunden damit zu verbringen, jedes einzelne Gerät manuell zu bespielen? Hier liegt die Herausforderung, eine effiziente und zeitsparende Lösung zu finden, um diesen umfangreichen Auftrag erfolgreich abzuwickeln.
+Unsers Firma ist auf die Entwicklung von Digital Signage spezialisiert und beliefert erfolgreich große Ketten. Jedes Signage-Gerät durchläuft einen individuellen Bespielungsprozess, der die Konfiguration von BIOS, Linux und AWX umfasst. Dieser Vorgang beansprucht etwa 15 Minuten pro Gerät. Angesichts einer bedeutenden Bestellung von über 4000 Signage-Geräten stellt sich die Frage: Wer hat die Lust und Zeit, mehr als 1000 Stunden damit zu verbringen, jedes einzelne Gerät manuell zu bespielen? Hier liegt die Herausforderung, eine effiziente und zeitsparende Lösung zu finden, um diesen umfangreichen Auftrag erfolgreich abzuwickeln.
 
 #### Was ist die aktuelle Situation? 
 
