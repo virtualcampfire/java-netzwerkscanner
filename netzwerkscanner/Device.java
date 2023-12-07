@@ -3,20 +3,34 @@
  * Beschreibung
  *
  * @version 1.0 vom 07.11.2023
- * @author 
+ * @author
  */
 
 public class Device {
-  
+
+  public Device(String ip, String mac) {
+    this.ip = ip;
+    this.mac = mac;
+  }
+
   // Anfang Attribute
   private String id;
   private String ip;
   private String mac;
+  private Boolean openPort;
   // Ende Attribute
-  
+
   // Anfang Methoden
   public String getId() {
     return id;
+  }
+
+  public void setPortOpen(Boolean openPortNeu) {
+    openPort = openPortNeu;
+  }
+
+  public Boolean getOpenPort() {
+    return openPort;
   }
 
   public String getIp() {
@@ -26,6 +40,7 @@ public class Device {
   public String getMac() {
     return mac;
   }
+
   public void setIp(String ipNeu) {
     ip = ipNeu;
   }
@@ -36,4 +51,3 @@ public class Device {
 
   // Ende Methoden
 } // end of Device
-
