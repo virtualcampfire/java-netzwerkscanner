@@ -1,13 +1,19 @@
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Main {
+public class App {
 
   private static DeviceManager deviceManager = new DeviceManager();
+  private static SSH ssh = new SSH("id", "description", "command", "host", 22, "username", "password");
+
+  public static SSH getSsh() {
+    return ssh;
+  }
 
   public static DeviceManager getDeviceManager() {
     return deviceManager;
@@ -56,7 +62,6 @@ public class Main {
             String[] details = deviceList.getModel().getElementAt(index).split(",");
             String ip = details[0].split(":")[1].trim();
             String mac = details[1].substring(details[1].indexOf(":") + 1).trim();
-            JPopupMenu popupMenu = new JPopupMenu();
             JMenuItem copyIpItem = new JMenuItem("Copy IP");
             copyIpItem.addActionListener(e1 -> {
               StringSelection stringSelection = new StringSelection(ip);
@@ -69,9 +74,7 @@ public class Main {
               Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
               clipboard.setContents(stringSelection, null);
             });
-            popupMenu.add(copyMacItem);
-            popupMenu.add(copyIpItem);
-            popupMenu.show(deviceList, e.getX(), e.getY());
+
           }
         }
       }
@@ -82,12 +85,11 @@ public class Main {
     deviceList.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
-        if (e.getButton() == MouseEvent.BUTTON1 && e.getClickCount() == 2) {
+        if (e.getButton() == MouseEvent.BUTTON1 && e.getClickCount() == 1) {
           int index = deviceList.locationToIndex(e.getPoint());
           if (index >= 0) {
             String[] details = deviceList.getModel().getElementAt(index).split(",");
             String ip = details[0].split(":")[1].trim();
-            String mac = details[1].substring(details[1].indexOf(":") + 1).trim();
             JPopupMenu popupMenu = new JPopupMenu();
             JMenuItem copyIpItem = new JMenuItem("Copy IP");
             copyIpItem.addActionListener(e1 -> {
@@ -95,13 +97,6 @@ public class Main {
               Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
               clipboard.setContents(stringSelection, null);
             });
-            JMenuItem copyMacItem = new JMenuItem("Copy MAC");
-            copyMacItem.addActionListener(e1 -> {
-              StringSelection stringSelection = new StringSelection(mac);
-              Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-              clipboard.setContents(stringSelection, null);
-            });
-            popupMenu.add(copyMacItem);
             popupMenu.add(copyIpItem);
             popupMenu.show(deviceList, e.getX(), e.getY());
           }
@@ -123,5 +118,51 @@ public class Main {
     frame.setSize(400, 300);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
+
+    JFrame taskFrame = new JFrame("Task Manager");
+    taskFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    // Hauptpanel mit BorderLayout, um verschiedene Komponenten zu organisieren
+    JPanel taskPanel = new JPanel(new BorderLayout());
+
+    // Liste zur Anzeige der Aufgaben
+    DefaultListModel<String> taskListModel = new DefaultListModel<>();
+    JList<String> taskList = new JList<>(taskListModel);
+    JScrollPane taskListScrollPane = new JScrollPane(taskList);
+    taskPanel.add(taskListScrollPane, BorderLayout.CENTER);
+
+    // Panel für die Eingabefelder und den Bestätigungs-Button
+    JPanel inputPanel = new JPanel(new GridLayout(3, 2)); // Grid-Layout für geordnete Eingabefelder
+
+    // Eingabefelder für IP-Adresse und Befehl
+    JTextField ipInputField = new JTextField();
+    JTextField commandInputField = new JTextField();
+
+    // Beschriftungen für die Eingabefelder
+    inputPanel.add(new JLabel("IP-Adresse:"));
+    inputPanel.add(ipInputField);
+    inputPanel.add(new JLabel("Befehl:"));
+    inputPanel.add(commandInputField);
+
+    // Bestätigungs-Button, um die Eingaben zu verarbeiten
+    JButton confirmButton = new JButton("Bestätigen");
+    confirmButton.addActionListener(e -> {
+      String ip = ipInputField.getText().trim();
+      String command = commandInputField.getText().trim();
+      getSsh().setHost(ip);
+      getSsh().setCommand(command);
+      getSsh().executeCommand();
+    });
+    inputPanel.add(confirmButton);
+
+    // Füge das Input-Panel am unteren Rand des Haupt-Panels hinzu
+    taskPanel.add(inputPanel, BorderLayout.SOUTH);
+
+    // Füge das Haupt-Panel zum JFrame hinzu
+    taskFrame.getContentPane().add(taskPanel);
+    taskFrame.setSize(400, 118);
+    taskFrame.setLocationRelativeTo(null);
+    taskFrame.setVisible(true);
+
   }
 }
