@@ -105,7 +105,7 @@ Diese Organisationsstruktur ermöglicht uns eine transparente, kollaborative und
 
 ### 4.	UML
 
-![UML](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/UML.png)
+![UML](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/uml.png)
 
 ### .	GUI-Design
 ### .	Event Handling
