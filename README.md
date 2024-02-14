@@ -87,7 +87,7 @@ Diese Organisationsstruktur ermöglicht uns eine transparente, kollaborative und
 
 ### 3.	EPK
 
-![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/epk.png)
+![EPK Netzwerkscanner](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/EPK.png)
 
 ### Verwendete Technologien und Packete: 
 
