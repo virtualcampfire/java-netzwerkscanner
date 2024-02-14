@@ -33,7 +33,6 @@ Start für AWX:
 - Scannen des gesamten restlichen Netzwerkes (255.255.255.0)
 - Check der offenen Ports der erkannten Geräte
 - Ausführen der Quick-Tasks über SSH
-- Datenbankmigration
 - Übersichtliche UI (JFrame)
 
 
@@ -111,11 +110,7 @@ Diese Organisationsstruktur ermöglicht uns eine transparente, kollaborative und
 ### .	GUI-Design
 ### .	Event Handling
 ### .	SSH-Kommunikation
-### .	IP- und MAC-Adressen abrufen
-### .	Datenbank 
+### .	IP-Adressen abrufen 
 ### .	Fehlerbehandlung
-### .	Benutzerfreundlichkeit
-### .	Sicherheit
-### .	Testen
 
 
