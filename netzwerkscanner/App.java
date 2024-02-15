@@ -41,43 +41,13 @@ public class App {
         Device[] devices = deviceManager.getDevices();
         for (Device device : devices) {
           SwingUtilities.invokeLater(() -> {
-            listModel.addElement("IP: " + device.getIp() + ", MAC: " + device.getMac()
-                + ", Openport: " + device.getOpenPort());
+            listModel.addElement("IP: " + device.getIp() + ", Openport: " + device.getOpenPort());
           });
         }
         SwingUtilities.invokeLater(() -> {
           scanButton.setText("Scan Complete");
         });
       }).start();
-    });
-
-    // für jedes Gerät ein Kontextmenü mit der Möglichkeit, die IP-Adresse zu
-    // kopieren
-    deviceList.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        if (e.getButton() == MouseEvent.BUTTON3) {
-          int index = deviceList.locationToIndex(e.getPoint());
-          if (index >= 0) {
-            String[] details = deviceList.getModel().getElementAt(index).split(",");
-            String ip = details[0].split(":")[1].trim();
-            String mac = details[1].substring(details[1].indexOf(":") + 1).trim();
-            JMenuItem copyIpItem = new JMenuItem("Copy IP");
-            copyIpItem.addActionListener(e1 -> {
-              StringSelection stringSelection = new StringSelection(ip);
-              Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-              clipboard.setContents(stringSelection, null);
-            });
-            JMenuItem copyMacItem = new JMenuItem("Copy MAC");
-            copyMacItem.addActionListener(e1 -> {
-              StringSelection stringSelection = new StringSelection(mac);
-              Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-              clipboard.setContents(stringSelection, null);
-            });
-
-          }
-        }
-      }
     });
 
     // für jedes Gerät ein Kontextmenü mit Doppelkick zum etwas in die Konsole zu

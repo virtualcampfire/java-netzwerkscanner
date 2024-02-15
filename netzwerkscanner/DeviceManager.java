@@ -29,8 +29,8 @@ public class DeviceManager {
     devices.clear();
   }
 
-  public void addDevice(String ip, String mac, boolean portOpen) {
-    Device newDevice = new Device(ip, mac);
+  public void addDevice(String ip, boolean portOpen) {
+    Device newDevice = new Device(ip);
     newDevice.setPortOpen(portOpen);
     devices.add(newDevice);
   }
@@ -54,8 +54,7 @@ public class DeviceManager {
             // Prüfe, ob Port offen ist
             boolean portOpen = isPortOpen(ip, port);
             // Füge Gerät hinzu
-            String mac = getMac(ip);
-            addDevice(ip, mac, portOpen);
+            addDevice(ip, portOpen);
           }
           return null;
         }));
@@ -87,31 +86,6 @@ public class DeviceManager {
       return true;
     } catch (Exception e) {
       return false;
-    }
-  }
-
-  public String getMac(String ip) throws UnknownHostException, SocketException {
-    try {
-      InetAddress address = InetAddress.getByName(ip);
-      NetworkInterface network = NetworkInterface.getByInetAddress(address);
-
-      if (network == null) {
-        return "Unknown";
-      }
-
-      byte[] mac = network.getHardwareAddress();
-
-      if (mac == null) {
-        return "Unknown";
-      }
-
-      return IntStream.range(0, mac.length)
-          .mapToObj(i -> String.format("%02X%s", mac[i], (i < mac.length - 1) ? ":" : ""))
-          .collect(Collectors.joining());
-    } catch (Exception e) {
-      // Log or handle the exception as needed
-      e.printStackTrace();
-      return "Unknown";
     }
   }
 }

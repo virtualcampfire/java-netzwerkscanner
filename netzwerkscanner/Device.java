@@ -9,15 +9,13 @@
 
 public class Device {
 
-  public Device(String ip, String mac) {
+  public Device(String ip) {
     this.ip = ip;
-    this.mac = mac;
   }
 
   // Anfang Attribute
   private String id;
   private String ip;
-  private String mac;
   private Boolean openPort;
   // Ende Attribute
 
@@ -38,16 +36,8 @@ public class Device {
     return ip;
   }
 
-  public String getMac() {
-    return mac;
-  }
-
   public void setIp(String ipNeu) {
     ip = ipNeu;
-  }
-
-  public void setMac(String macNeu) {
-    mac = macNeu;
   }
 
   // Ende Methoden

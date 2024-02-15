@@ -96,9 +96,84 @@ Diese Organisationsstruktur ermöglicht uns eine transparente, kollaborative und
 
 ![UML](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/uml.png)
 
-### .	GUI-Design
-### .	Event Handling
-### .	SSH-Kommunikation
-### .	IP-Adressen abrufen 
+### 5.  GUI-Design
+Das ganze Design wurde mit Figma gemacht. Figma ist ein Online-Tool fürs Designen und Prototypen, das Designern und Teams hilft, gemeinsam zu arbeiten. Es bietet einfache Möglichkeiten, Designs zu erstellen und zu teilen, und das alles ziemlich benutzerfreundlich.
+![Figma Design](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/figmaDesign.png)
+
+### 6. Event Handling
+
+![Event Handling](https://github.com/virtualcampfire/java-netzwerkscanner/blob/main/assets-doc/eventhandling.png)
+
+### 7. SSH-Kommunikation
+
+```java
+import com.jcraft.jsch.Channel;
+import com.jcraft.jsch.ChannelExec;
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.Session;
+import java.io.InputStream;
+
+public class SSHCommandExecution {
+    public static void main(String[] args) {
+        String host = "server-host";
+        String user = "user-name";
+        String password = "user-pw";
+        int port = 22;
+        String command = "ip -a";  // Der auszuführende Befehl
+
+        try {
+            JSch jsch = new JSch();
+            Session session = jsch.getSession(user, host, port);
+            session.setPassword(password);
+            session.setConfig("StrictHostKeyChecking", "no");
+            
+            System.out.println("Verbindung wird hergestellt...");
+            session.connect();
+
+            // Channel für die Ausführung von Befehlen öffnen
+            Channel channel = session.openChannel("exec");
+            ((ChannelExec) channel).setCommand(command);
+
+            // Ausgabe-Stream vom Server bekommen
+            InputStream in = channel.getInputStream();
+
+            // Channel verbinden
+            channel.connect();
+
+            // Ausgabe lesen
+            byte[] tmp = new byte[1024];
+            while (true) {
+                while (in.available() > 0) {
+                    int i = in.read(tmp, 0, 1024);
+                    if (i < 0) break;
+                    System.out.print(new String(tmp, 0, i));
+                }
+                if (channel.isClosed()) {
+                    if (in.available() > 0) continue;
+                    System.out.println("exit-status: " + channel.getExitStatus());
+                    break;
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception ee) {}
+            }
+
+            // Channel und Session schließen
+            channel.disconnect();
+            session.disconnect();
+            System.out.println("Verbindung getrennt.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 8. IP-Adressen abrufen 
+
+- IP-Adressen-Scan: Durchläuft alle IP-Adressen im lokalen Subnetz des ausführenden Geräts.
+- Port-Überprüfung: Prüft, ob der angegebene Port auf den gefundenen Geräten offen ist.
+- Geräteerkennung: Identifiziert erreichbare Geräte im Netzwerk und sammelt Informationen wie IP-Adresse.
+- Multithreading: Verwendet einen Thread-Pool, um parallele Scans durchzuführen und die Scan-Zeit zu reduzieren.
 
 
