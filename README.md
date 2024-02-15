@@ -176,4 +176,49 @@ public class SSHCommandExecution {
 - Geräteerkennung: Identifiziert erreichbare Geräte im Netzwerk und sammelt Informationen wie IP-Adresse.
 - Multithreading: Verwendet einen Thread-Pool, um parallele Scans durchzuführen und die Scan-Zeit zu reduzieren.
 
+### 9. Entwicklungsprozess
 
+## Grundsätzliche Fragestellungen: 
+- Wie funktioniert das aktuelle System?
+- Wie könnte man dieses Verbessern? 
+- Was wird dafür benötigt? 
+
+## Grundsätzliche Schlüsselstellen: 
+- Organisation (Organisation auf GitHub)
+- Entwicklung Ereignisgesteuerte Prozesskette
+- Entwicklung Unified Modeling Language
+- Entwürf GUI-Design
+- Struktur des Event Handlings 
+- SSH-Kommunikation (Welches Packet könnte man nutzen)
+- Implementierung Netzwerk und Portscan
+
+
+### 10. Aufgetretene Probleme und Problemlösungen:
+
+- Optimierung der Durchlaufgeschwindigkeit:
+    - Ursprünglich benötigte ein vollständiger Scandurchlauf mehrere Minuten. Eine signifikante Beschleunigung wurde durch die Integration von 50 zusätzlichen virtuellen Threads erreicht.
+- Probleme mit unterschiedlichen Packeten und des Classpathes
+
+
+### 11. Maximal- Minimalziel
+
+$ = Erreicht
+! = Nicht erreicht
+
+- Minimalziel:
+    - $ Netzwerkscanner
+- Mittleresziel
+    - $ Erkennung der offenen Ports
+- Maximalziel
+    - ! Implementierung der SSH-Verbindung (Komplikationen mit Classpathes)
+
+## Nutzerdokumentation
+
+1. Starten Sie den Netzwerkscanner durch Auswahl der entsprechenden Anwendung.
+2. Nach dem Öffnen erscheinen zwei separate Fenster: eines für den Netzwerkscanner und ein weiteres für den Task-Manager.
+3. Durch Betätigen der Schaltfläche „Netzwerk scannen“ werden alle im Netzwerk befindlichen Geräte aufgelistet, einschließlich derjenigen, die den Port 8081 geöffnet haben.
+4. Ein Klick auf ein spezifisches Gerät in der Liste ermöglicht es Ihnen, über eine angezeigte Option die IP-Adresse des Geräts zu kopieren.
+5. Bei Bedarf kann der Netzwerkscan jederzeit erneut durchgeführt werden, um die aktuelle Geräteliste zu aktualisieren.
+6. Soll ein spezifisches Gerät eine Aufgabe ausführen, kann dies über den Task-Manager initiiert werden.
+7. Im Task-Manager können die IP-Adresse des Zielgeräts sowie der auszuführende Befehl eingegeben werden.
+8. Nach Bestätigung der Eingaben erfolgt eine Anmeldung am Zielgerät mittels Standardauthentifizierung über SSH, woraufhin der eingegebene Befehl ausgeführt wird.
